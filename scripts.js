@@ -68,13 +68,19 @@ elemento.addEventListener("mouseout", function() {
 function getRandom(arr) {
     for (let i = 0; i < arr.length; i++) {
         return arr[Math.floor(Math.random() * arr.length)]
-                   }
+    }
 }
 
-let colors = ["#724319", "#d88180", "#f7b1b0, #feeac7, #cad182"]
-
-getRandom(colors)
-
-
-
+let colors = ["#724319", "#d88180", "#f7b1b0", "#feeac7", "#cad182"]
 let gifs = ["assets/abracadabra.gif", "assets/magic-1.gif", "assets/magic-2.gif", "assets/magic-3.gif", "assets/magic-4.gif", "assets/magic-5.gif", "assets/magic-6.gif"]
+let cuerpo = document.querySelector("body")
+cuerpo.addEventListener("click", function() {
+    for (let i = 0; i < imagenes.length; i++) {
+    imagenes[i].src = getRandom(gifs)
+    }
+    cuerpo.style.backgroundColor = getRandom(colors)
+})
+
+
+
+
